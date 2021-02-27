@@ -10,15 +10,13 @@ const App = () => {
     { name: "Tokyo", country: "Japan" },
     { name: "Lonavala", country: "India" },
   ]);
-  let count = 0;
 
   return (
     <div id="main">
       <ol>
         {cityList.map((ele, index) => {
           if (ele.country === "India") {
-            count++;
-            return <li key={`loction${count}`}>{ele.name}</li>;
+            return <li key={index}>{ele.name}</li>;
           }
         })}
       </ol>
