@@ -8,20 +8,19 @@ const App = () => {
     { name: "New York", country: "USA" },
     { name: "Darjeeling", country: "India" },
     { name: "Tokyo", country: "Japan" },
-    { name: "Lonavala", country: "India" },
+    { name: "Lonavala", country: "India" }
   ]);
+  const List = () => {
+    let count = 0;
+    const allList = cityList.map((ele, index) => {
+      if (ele.country === "India") {
+        return <li key={`location${count++}`}>{ele.name}</li>;
+      }
+    });
+    return <ol>{allList}</ol>;
+  };
 
-  return (
-    <div id="main">
-      <ol>
-        {cityList.map((ele, index) => {
-          if (ele.country === "India") {
-            return <li key={index}>{ele.name}</li>;
-          }
-        })}
-      </ol>
-    </div>
-  );
+  return <div id="main">{List()}</div>;
 };
 
 export default App;
